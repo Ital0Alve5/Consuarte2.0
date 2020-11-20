@@ -1,12 +1,15 @@
-input[type="checkbox"]{display: none;}
-#subItens{display: none;}
-#subItensFixos{display: none;}
 
 *{margin: 0; padding: 0; font-family: sans-serif; list-style: none;
 text-decoration: none; color: black;}
 /*----------------------------------------------------------------------*/
 /*------------------------------posicionamento nav----------------------------*/
 
+@media(min-width: 801px){
+.logo{display: none;}
+input[type="checkbox"]{display: none;}
+#subItens{display: none;}
+#subItensFixos{display: none;}
+/*roxo rgb(106,30,128), vermelho rgb(154,43,85), azul claro rgb(12,229,218), pink rgb(153,12,174)*/
 .pag2{background-color: chartreuse; height: 200vh; width: 100%;}
 
 #logo{width: 230px; margin: 0 5vw 0 10vw;}
@@ -58,12 +61,20 @@ text-decoration: none; color: black;}
 .video video{min-height: 100%; min-width: 100%;}
 
 .video{
-    width: 100%; height: 100vh; overflow: hidden; position: ;
+    width: 100%; 
+    height: 100vh; 
+    overflow: hidden;
 }
 
 .videoOverlay{
-    width: 100%; height: 100vh; position: absolute; overflow: hidden; top: 0;
-    background-color: rgba(2, 8, 29, 0.904); opacity: 0.8; filter: blur(20px);
+    width: 100%; 
+    height: 100vh; 
+    position: absolute; 
+    overflow: hidden; 
+    top: 0;
+    background-color: rgba(2, 8, 29, 0.904); 
+    opacity: 0.8; 
+    filter: blur(20px);
 }
 
 /*------------------------Efeitos de hover---------------------------*/
@@ -159,25 +170,171 @@ text-decoration: none; color: black;}
 
 
 /*-----------------------------SETA-----------------------------------*/
-.seta1{background-color:  rgb(73, 181, 196); width: 7px; height: 2px;
-    transform: rotate(-45deg) translate(-2px, 37px); transition: all 0.3s linear;}
-.seta2{
-    content: ''; display: block; position: relative; top: 10px;
-    background-color:  rgb(73, 181, 196); width: 7px; height: 2px;
-    transform: rotate(45deg) translate(25px, -3px); transition: all 0.3s linear;
+.seta1{
+    background-color:  rgb(73, 181, 196); 
+    width: 7px; 
+    height: 2px;
+    transform: rotate(-45deg) translate(-2px, 37px); 
+    transition: all 0.3s linear;
 }
-
+.seta2{
+    content: ''; 
+    display: block; 
+    position: relative; 
+    top: 10px;
+    background-color:rgb(73, 181, 196); 
+    width: 7px; 
+    height: 2px;
+    transform: rotate(45deg) translate(25px, -3px); 
+    transition: all 0.3s linear;
+}
 
 .seta1Up{
-    background-color: rgb(0,131,149); width: 7px; height: 2px;
-    transform: rotate(45deg) translate(35px, 0px); transition: all 0.3s linear;
+    background-color: rgb(0,131,149); 
+    width: 7px; 
+    height: 2px;
+    transform: rotate(45deg) translate(35px, 0px); 
+    transition: all 0.3s linear;
 }
 .seta2Up{
-    content: ''; display: block; position: relative; top: 10px;
-    background-color: rgb(234,140,0); width: 7px; height: 2px;
-    transform: rotate(-45deg) translate(5px, 23px); transition: all 0.3s linear;
+    content: ''; 
+    display: block; 
+    position: relative; 
+    top: 10px;
+    background-color: rgb(234,140,0); 
+    width: 7px; 
+    height: 2px;
+    transform: rotate(-45deg) translate(5px, 23px); 
+    transition: all 0.3s linear;
 }
 
 /*------------------------------------------------------------*/
-.pag2{background-color: yellowgreen; height: 100vh; width: 100%;}
-/*roxo rgb(106,30,128), vermelho rgb(154,43,85), azul claro rgb(12,229,218), pink rgb(153,12,174)*/
+
+}
+
+@media(max-width: 800px){
+
+    /*-----------------------------------Posicionamentos e ajustes gerais -------------------------------*/
+    #logo{display: none;}
+    input[type="checkbox"]{display: none;}
+    #subItens{display: none;}
+    #subItensFixos{display: none;}
+    .video{display: none;}
+    #serviços:checked ~ #subItens{display: block;}
+
+    .logo{
+        width: 180px; 
+        float: left; 
+        margin-left: 50%; 
+        transform: translateX(-50%);
+    }
+
+    #iconeMenu{
+        position: absolute; 
+        z-index: 999; 
+        padding: 10px; 
+        width: 15px; 
+        height: 14px;
+        margin: 5px;
+    } 
+    
+    span{
+        width: 25px; 
+        height: 3px; 
+        position: absolute;
+        background-color: black; 
+        top: 20px; 
+        left: 10px; 
+        transition: all .3s linear;
+        z-index: 998;
+    } 
+    
+    span::before{
+        content: ''; 
+        width: 25px; 
+        height: 3px; 
+        position: absolute; 
+        background-color: black;
+        bottom: -7px;
+        transition: all .3s linear; 
+        z-index: 999;
+    } 
+    span::after{content: ''; 
+        width: 25px; 
+        height: 3px; 
+        position: absolute; 
+        background-color: black;
+        top: -7px; 
+        transition: all .3s ; 
+        z-index: 999;
+    } 
+    
+    .nav{
+        display: flex; 
+        background-color: blue; 
+        position: absolute; 
+        width: 100%;
+        transform: translateY(-500px); 
+        transition: all 0.5s ease;
+    }
+    .itens, #subItens{background-color: chartreuse; width: 100%;}
+    
+    .item, #subItens .sub{
+        background-color: coral; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        padding: 15px;
+    }
+
+    /*--------------------------funcionamento do menu mobile ------------------------------*/
+
+    #menu:checked ~ span{background-color: transparent;} /*Se o checkbox do menu for selecionado, a barrinha do meio ficará transparente, ou seja, sumirá*/
+    #menu:checked ~ span::before{transform: rotate(-45deg) translate(4px, -4px);} /*A barrinha anterior irá girar e descer um pouco*/
+    #menu:checked ~ span::after{transform: rotate(45deg) translate(5px, 6px);} /*A barrinha posterior irá girar no sentido contrário e subirá um pouco, formando um X com a barrinha de cima*/
+    #menu:checked ~ label{border-radius: 50%; background-color: rgba(165, 42, 42, 0.219);} /*Quando o X for formado, o label do menu formará um círculo*/
+    #menu:checked ~ .nav{transform: translateY(0);} /*E o menu descerá e aparecerá*/
+
+/*------------------------------seta mobile------------------------------*/
+    #seta{
+        position: absolute; 
+        top: 140px;
+         margin-left: 60%;
+        }
+    .seta1{background-color:  rgb(73, 181, 196); 
+        width: 7px; height: 2px; 
+        transform: rotate(-45deg) translate(-2px, 37px); 
+        transition: all 0.3s linear;
+    }
+    .seta2{
+        content: ''; 
+        display: block; 
+        position: relative; 
+        top: 10px;
+        background-color:  rgb(73, 181, 196); 
+        width: 7px; 
+        height: 2px;
+        transform: rotate(45deg) translate(25px, -3px); 
+        transition: all 0.3s linear;
+    }
+        
+    .seta1Up{
+        background-color: rgb(0,131,149); 
+        width: 7px; 
+        height: 2px;
+        transform: rotate(45deg) translate(35px, 0px); 
+        transition: all 0.3s linear;
+    }
+    .seta2Up{
+        content: ''; 
+        display: block; 
+        position: relative; 
+        top: 10px;
+        background-color: rgb(234,140,0); 
+        width: 7px; 
+        height: 2px;
+        transform: rotate(-45deg) translate(5px, 23px); 
+        transition: all 0.3s linear;
+    }
+
+}

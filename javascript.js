@@ -7,7 +7,7 @@ function fixarNava(){
         nava.style.position = 'fixed'
         nava.style.top = 0
         nava.style.marginTop = 0
-        nava.style.backgroundColor = 'rgba(21, 54, 105, 0.192)';
+        nava.style.backgroundColor = 'rgba(21, 54, 105, 0.592)';
         nava.style.zIndex = 999
     }
     else{
@@ -30,6 +30,8 @@ function subMenuOn(event){
 function subMenuOut(){serviços.checked = false}
 
 
+/*--------------------------seta desk-------------------------*/
+
 var serviçosLabel = document.getElementById('serviçosLabel')
 serviçosLabel.addEventListener('mouseover', setaDown)
 serviçosLabel.addEventListener('mouseout', setaUp)
@@ -48,4 +50,44 @@ function setaDown(){
     var seta2 = document.querySelector('.seta2')
     seta1.classList.add('seta1Up')
     seta2.classList.add('seta2Up')
+}
+
+/*-----------------------Seta Mobile---------------------------------*/
+
+serviçosLabel.addEventListener('click', setaMobile)
+
+function setaMobile(){
+    var seta = document.getElementById('seta')
+    if(window.innerWidth < 800){
+        if(serviços.checked == true){
+            seta.style.transform = 'rotate(180deg) translate(-10vw, -52px)'
+            seta.style.transition = 'all 0.5s linear'
+            }
+        else{seta.style.transform = ''; seta.style.transition = 'all 0.5s linear'}
+    }
+    }
+
+/*-----------------conserto de alguns bugs----------------------*/
+
+window.onresize = function(){bugs()}
+function bugs(){
+    if(window.innerWidth > 800){
+        var seta = document.getElementById('seta')
+        var nav = document.querySelector('.nav')
+        seta.style.transform = ''
+    }
+    else if(window.innerWidth < 800){
+        var nav = document.querySelector('.nav')
+        nav.style.marginTop = 0
+        nav.style.zIndex = 4
+    }
+}
+
+/*-----------------------------Fehca o Menu quando clicar fora------------------------------------*/
+
+window.onclick = (clicado)=>{
+    if(clicado.target.id =='iconeMenu' || clicado.target.id == 'menu' || clicado.target.id =='serviços' || clicado.target.id =='serviçosLabel' ){}
+    else{
+        document.getElementById('menu').checked = false
+    }
 }
