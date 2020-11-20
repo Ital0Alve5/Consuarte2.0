@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consuarte</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href='icone.png' type="image/png" rel="icon">
+</head>
+<body>
+    <input type="checkbox" id="menu">
+    <label for="menu" id="iconeMenu"></label>
+    <div class="nav">
+        <img src="logo.png" id="logo">
+        <ul class="itens">
+            <li><a class="scrollto item" href="#início">Início</a></li>
+            <li><a class="scrollto item" href="#sobreNós">Sobre nós</a></li>
+            <li><a class="scrollto item" href="#galeria">Galeria</a></li>
+            <div class="menuDrop">
+                <input type="checkbox" id="serviços">
+                <label for="serviços" id="serviçosLabel" class="scrollto item" onmouseout="subMenuOut()">Serviços</label>
+                <div id="seta"><div class="seta1"></div><div class="seta2"></div></div>
+                <ul id="subItens">
+                    <li><a class="scrollto sub" name="sub" href="#teatro">Teatro treinamento</a>
+                    <li><a class="scrollto sub" name="sub" href="#gestão">Gestão de projetos</a>
+                    <li><a class="scrollto sub" name="sub" href="#campanhas">Campanhas institucionais</a>
+                    <li><a class="scrollto sub" name="sub" href="#treinamentos">Treinamentos corporativos</a></li>
+                </ul>
+            </div>
+            <li><a class="scrollto item" href="#parcerias">Parcerias</a></li>
+            <li><a class="scrollto item" href="#contato">Contato</a></li>
+        </ul>
+    </div>
+    <div class="video">
+        <video src="video.mov" loop autoplay muted></video>
+    </div>
+    <div class="videoOverlay"></div>
+    <div class="pag2"></div>
+    <script src="javascript.js"></script>
+</body>
+</html>
